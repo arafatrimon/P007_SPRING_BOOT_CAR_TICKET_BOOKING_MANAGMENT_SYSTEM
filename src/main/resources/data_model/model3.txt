@@ -1,0 +1,76 @@
+Sure, here's another updated schema with additional tables and fields:
+
+Users Table
+
+id (int, primary key)
+name (varchar)
+email (varchar)
+password (varchar)
+phone_number (varchar)
+address (varchar)
+city (varchar)
+state (varchar)
+country (varchar)
+postal_code (varchar)
+Cars Table
+
+id (int, primary key)
+model (varchar)
+brand (varchar)
+year (int)
+capacity (int)
+fuel_type (varchar)
+transmission_type (varchar)
+air_conditioning (boolean)
+price_per_day (float)
+price_per_km (float)
+deposit_amount (float)
+available (boolean)
+description (text)
+image_url (varchar)
+Locations Table
+
+id (int, primary key)
+name (varchar)
+address (varchar)
+city (varchar)
+state (varchar)
+country (varchar)
+postal_code (varchar)
+latitude (float)
+longitude (float)
+Bookings Table
+
+id (int, primary key)
+user_id (int, foreign key references users.id)
+car_id (int, foreign key references cars.id)
+pickup_location_id (int, foreign key references locations.id)
+pickup_date (datetime)
+return_location_id (int, foreign key references locations.id)
+return_date (datetime)
+total_price (float)
+payment_method (varchar)
+payment_status (varchar)
+cancellation_reason (varchar)
+pickup_odo_reading (float)
+return_odo_reading (float)
+rental_duration_hours (int)
+rental_duration_days (int)
+Payment Methods Table
+
+id (int, primary key)
+name (varchar)
+description (text)
+Payments Table
+
+id (int, primary key)
+user_id (int, foreign key references users.id)
+booking_id (int, foreign key references bookings.id)
+payment_method_id (int, foreign key references payment_methods.id)
+amount (float)
+timestamp (datetime)
+This updated schema includes additional tables and fields to provide more information about users, cars, bookings, and payments. The Cars table has been updated to include fields for year, deposit amount, and rental duration (in hours and days). The Locations table has been updated to include fields for latitude and longitude, which can be used to provide geolocation-based services. The Bookings table has been updated to include fields for odometer readings at pickup and return, which can be used to calculate the rental distance and fuel consumption.
+
+In addition, this schema includes a Payment Methods table, which can be used to store information about different payment methods supported by the car ticket booking system, and a Payments table, which can be used to store information about payments made by users for their bookings.
+
+Again, depending on the specific requirements of the car ticket booking system, additional tables or fields may be needed to store other relevant information.

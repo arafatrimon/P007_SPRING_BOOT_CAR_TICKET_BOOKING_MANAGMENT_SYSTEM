@@ -1,0 +1,43 @@
+Sure, here's an updated schema with additional fields:
+
+Users Table
+
+id (int, primary key)
+name (varchar)
+email (varchar)
+password (varchar)
+phone_number (varchar)
+address (varchar)
+city (varchar)
+state (varchar)
+country (varchar)
+postal_code (varchar)
+Cars Table
+
+id (int, primary key)
+model (varchar)
+brand (varchar)
+capacity (int)
+fuel_type (varchar)
+transmission_type (varchar)
+air_conditioning (boolean)
+price_per_km (float)
+available (boolean)
+description (varchar)
+image_url (varchar)
+Booking Table
+
+id (int, primary key)
+user_id (int, foreign key references users.id)
+car_id (int, foreign key references cars.id)
+pickup_location (varchar)
+pickup_date (datetime)
+return_location (varchar)
+return_date (datetime)
+total_price (float)
+payment_method (varchar)
+payment_status (varchar)
+cancellation_reason (varchar)
+This updated schema includes more fields that provide additional information about users, cars, and bookings. In the Users table, we've added fields for phone number, address, city, state, country, and postal code, which can be useful for contacting the user and delivering the car. In the Cars table, we've added fields for fuel type, transmission type, air conditioning, description, and image URL, which can provide more details and visual information about the car. In the Booking table, we've added fields for return location, payment method, payment status, and cancellation reason, which can help track the status of the booking and the reason for any cancellations.
+
+Again, depending on the specific requirements of the car ticket booking system, additional tables or fields may be needed to store other relevant information.

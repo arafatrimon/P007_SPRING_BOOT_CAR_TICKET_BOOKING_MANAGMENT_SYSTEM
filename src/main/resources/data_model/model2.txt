@@ -1,0 +1,52 @@
+Sure, here's an updated schema with additional tables:
+
+Users Table
+
+id (int, primary key)
+name (varchar)
+email (varchar)
+password (varchar)
+phone_number (varchar)
+address (varchar)
+city (varchar)
+state (varchar)
+country (varchar)
+postal_code (varchar)
+Cars Table
+
+id (int, primary key)
+model (varchar)
+brand (varchar)
+capacity (int)
+fuel_type (varchar)
+transmission_type (varchar)
+air_conditioning (boolean)
+price_per_km (float)
+available (boolean)
+description (varchar)
+image_url (varchar)
+Locations Table
+
+id (int, primary key)
+name (varchar)
+address (varchar)
+city (varchar)
+state (varchar)
+country (varchar)
+postal_code (varchar)
+Bookings Table
+
+id (int, primary key)
+user_id (int, foreign key references users.id)
+car_id (int, foreign key references cars.id)
+pickup_location_id (int, foreign key references locations.id)
+pickup_date (datetime)
+return_location_id (int, foreign key references locations.id)
+return_date (datetime)
+total_price (float)
+payment_method (varchar)
+payment_status (varchar)
+cancellation_reason (varchar)
+This updated schema includes an additional table for Locations, which can be used to store information about the different rental locations that the car ticket booking system supports. The Locations table includes fields for name, address, city, state, country, and postal code, which can be used to provide location-specific information to users. The Bookings table has been updated to include foreign keys to the Locations table for pickup and return locations.
+
+Again, depending on the specific requirements of the car ticket booking system, additional tables or fields may be needed to store other relevant information.
